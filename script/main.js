@@ -632,6 +632,11 @@ const animate = () => {
           ghost.velocity.y = 0;
           break;
       }
+      //ghost rotation
+      if (ghost.velocity.x > 0) ghost.rotation = 0;
+      else if (ghost.velocity.x < 0) ghost.rotation = Math.PI;
+      else if (ghost.velocity.y > 0) ghost.rotation = Math.PI / 2;
+      else if (ghost.velocity.y < 0) ghost.rotation = Math.PI * 1.5;
       ghost.prevCollisions = [];
     }
   });
